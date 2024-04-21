@@ -62,6 +62,6 @@ spec:
       instance_count: 1
       instance_size_slug: basic-xxs
       name: metadata-provider
-      build_command: yarn build
+      build_command: yarn install && yarn build
       run_command: yarn start
       source_dir: /

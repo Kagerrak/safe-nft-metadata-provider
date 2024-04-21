@@ -26,6 +26,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "postinstall": "cd node_modules/@hashlips-lab/collection-data-updater && npm install && npm run build"
   }
 }
