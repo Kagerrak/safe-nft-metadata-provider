@@ -3,7 +3,7 @@ spec:
     - rule: DEPLOYMENT_FAILED
     - rule: DOMAIN_FAILED
   name: safe-nft-metadata-provider
-  region: fra
+  region: sgp
   workers:
     - environment_slug: node-js
       envs:
@@ -15,7 +15,7 @@ spec:
           value: 0xYOUR_CONTRACT_ADDRESS
         - key: START_TOKEN_ID
           scope: RUN_TIME
-          value: '1'
+          value: "1"
 
         - key: PRIVATE_ASSETS_PATH
           scope: RUN_TIME
@@ -55,10 +55,10 @@ spec:
 
         - key: FULL_REFRESH_DELAY
           scope: RUN_TIME
-          value: '3600'
+          value: "3600"
       git:
-        branch: 2.x
-        repo_clone_url: https://github.com/hashlips-lab/safe-nft-metadata-provider.git
+        branch: main
+        repo_clone_url: https://github.com/kagerrak/safe-nft-metadata-provider.git
       instance_count: 1
       instance_size_slug: basic-xxs
       name: metadata-provider
