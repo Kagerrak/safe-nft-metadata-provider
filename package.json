@@ -17,7 +17,7 @@
     "/dist"
   ],
   "dependencies": {
-    "@hashlips-lab/collection-data-updater": "^1.0.0",
+    "@hashlips-lab/collection-data-updater": "git+https://github.com/kagerrak/collection-data-updater.git",
     "dotenv": "^16.0.0"
   },
   "devDependencies": {
