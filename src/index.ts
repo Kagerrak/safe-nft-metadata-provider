@@ -13,7 +13,7 @@ import {
 
 const contract = new ERC721Contract(
   config.CONTRACT_ADDRESS,
-  config.RPC_ENDPOINT,
+  config.RPC_ENDPOINT
 );
 
 const s3Config = {
@@ -28,7 +28,10 @@ const collectionDataUpdater = new CollectionDataUpdater(
   /*
    * This object tells which tokens can be revealed and which ones cannot.
    */
-  new ERC721CollectionStatusProvider(contract, BigNumber.from(config.START_TOKEN_ID)),
+  new ERC721CollectionStatusProvider(
+    contract,
+    BigNumber.from(config.START_TOKEN_ID)
+  ),
   /*
    * The DataUpdaters are objects which perform operations whenever a token has to
    * be revealed or hidden.
@@ -42,7 +45,7 @@ const collectionDataUpdater = new CollectionDataUpdater(
       s3Config,
       config.PRIVATE_ASSETS_PATH,
       config.PUBLIC_ASSETS_PATH,
-      config.ASSETS_EXTENSION,
+      config.ASSETS_EXTENSION
     ),
     new S3BasicNftMetadataDataUpdater(
       "Metadata",
@@ -51,10 +54,13 @@ const collectionDataUpdater = new CollectionDataUpdater(
       config.PUBLIC_METADATA_PATH,
       (tokenId: BigNumber, metadata: any) => {
         // Update any metadata value here...
-        metadata["image"] = config.PUBLIC_ASSETS_URI_TEMPLATE.replace("{{TOKEN_ID}}", tokenId.toString());
+        metadata["image"] = config.PUBLIC_ASSETS_URI_TEMPLATE.replace(
+          "{{TOKEN_ID}}",
+          tokenId.toString()
+        );
 
         return metadata;
-      },
+      }
     ),
   ],
   /*
@@ -64,9 +70,11 @@ const collectionDataUpdater = new CollectionDataUpdater(
    * events or timers.
    */
   [
-    new UpdateAllTokensEveryNSecondsRuntime(parseInt(config.FULL_REFRESH_DELAY)),
+    new UpdateAllTokensEveryNSecondsRuntime(
+      parseInt(config.FULL_REFRESH_DELAY)
+    ),
     new UpdateTokenOnMintRuntime(contract),
-  ],
+  ]
 );
 
 collectionDataUpdater.start();

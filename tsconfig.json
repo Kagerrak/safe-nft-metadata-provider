@@ -1,13 +1,24 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "ESNext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "esModuleInterop": true,
     "declaration": true,
     "outDir": "./dist",
-
-    "strictNullChecks": true
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"]
+    },
+    "lib": ["esnext", "dom"], // Adjust this based on what's appropriate for your project
+    "types": ["node"], // Make sure 'node' is included, or specify other needed types explicitly
+    "skipLibCheck": true // This option can skip type checking of all declaration files (*.d.ts)
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "node_modules/@hashlips-lab/collection-data-updater/src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "!node_modules/@hashlips-lab/collection-data-updater"
   ]
 }
