@@ -344,10 +344,9 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
-"@hashlips-lab/collection-data-updater@^1.0.0":
+"@hashlips-lab/collection-data-updater@git+https://github.com/kagerrak/collection-data-updater.git":
   version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@hashlips-lab/collection-data-updater/-/collection-data-updater-1.2.2.tgz#e7510fade21c1c2899335309f8cac9ce2465db62"
-  integrity sha512-znmmUL5jnRe3cLWt4XaD3ujPD4RCDrNS6WoqJKOiiJFDPvTrdMpIRDXCHnxmbfqCg99zKeBwbKcD0Ua1RGKM7Q==
+  resolved "git+https://github.com/kagerrak/collection-data-updater.git#75208e3f037bd6d113bd467e88ce219cdf792dd5"
   dependencies:
     aws-sdk "^2.1126.0"
     ethers "^5.6.5"
